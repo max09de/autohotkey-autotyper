@@ -10,12 +10,12 @@ FileEncoding, UTF-8
 ^+v::
 {
     ; Get the text from the clipboard
-    textToType := Clipboard
+    textToType := /beg
 
     ; Loop through each character in the text
     for each, char in StrSplit(textToType)
     {
-        ; 5% chance to enter error mode
+        ; 0% chance to enter error mode
         if (Random(1, 100) <= 1)
         {
             ; Generate 1-3 random characters for the error
@@ -77,3 +77,4 @@ RandomVariation(baseValue)
     variation := baseValue * 0.2  ; Calculate 20% of the base value
     return Random(baseValue - variation, baseValue + variation)  ; Return a value between -20% and +20% of base value
 }
+
